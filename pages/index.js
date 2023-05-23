@@ -101,7 +101,12 @@ return  resDate
 
   return (
     <>
-      <h3 className='text-center mt-5 pt-5'>Who wins the World Championship?</h3>
+        
+      <div className="backgroundImg"></div>  
+     
+      <h3 className='text-center mt-5 pt-5'>
+        Who wins the World Championship?
+      </h3>
 
       <h5 className='text-center'>
         To Add Comment please 
@@ -176,12 +181,12 @@ return  resDate
         )
        }
 
-       
-
-
-
 
        <style>{`
+
+       backgroundImg : {
+        backgroundImage: url('/usa.png')
+       }
 
         .likeIcon {
           cursor: pointer;

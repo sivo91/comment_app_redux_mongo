@@ -8,7 +8,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Footer = () => {
 
-const shareUrl = 'https://wolrd-cup-2023.vercel.app/'
+const shareUrl = 'https://comment-app-amber.vercel.app/'
 
 
   return (
