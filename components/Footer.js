@@ -73,6 +73,7 @@ const shareUrl = 'https://comment-app-amber.vercel.app/'
      .backgroundImage {
       position: absolute;
       width: 100%;
+      top: 0;
       height: 100%;
       opacity: 0.03;
       background-image: url('/usa.png');
@@ -81,7 +82,7 @@ const shareUrl = 'https://comment-app-amber.vercel.app/'
 
       footer {
         position: relative;
-        padding: 10px 0 ;
+        padding: 20px 0;
         
       }
 
