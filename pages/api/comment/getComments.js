@@ -15,7 +15,6 @@ const handler = async (req, res) => {
   
   const comments = await Comment.find({})
        .sort({ createdAt: -1 })
-       .limit(3)
 
   if(!comments) {
     return res.status(200).json({
