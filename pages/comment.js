@@ -214,7 +214,7 @@ return  resDate
         .commentsBox {
           position: relative;
           width: 375px;
-          margin: 30px auto;
+          margin: 30px auto 60px;
           padding: 5px;
           border-radius: 4px;
         }

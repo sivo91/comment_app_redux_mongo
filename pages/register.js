@@ -91,8 +91,9 @@ const handleSubmit = async (e) => {
   return (
    
     <>
-
-        <form  onSubmit={handleSubmit} >
+    
+        <div className="registerBox">
+          <form  onSubmit={handleSubmit} >
            
              <h3 className="text-center mb-3">Sign Up</h3>
 
@@ -154,9 +155,16 @@ const handleSubmit = async (e) => {
               </button>
        
        </form>
+        </div>
 
 
     <style>{`
+
+    .registerBox {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+    }
     
      
      form {

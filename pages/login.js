@@ -118,6 +118,7 @@ const Login = () => {
       .formBox {
         position:relative;
         width: 375px;
+        height: 77vh;
         margin: 0 auto;
         top: 200px;
       }

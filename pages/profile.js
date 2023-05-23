@@ -63,7 +63,9 @@ const handleEditImage = async (imgID) => {
 
   return (
     <>
-      <h3 className='text-center mt-5 pt-5'>Profile</h3>
+      
+      <div className="profileBox">
+          <h3 className='text-center mt-5 pt-5'>Profile</h3>
 
       <form >
           <p>Image Profile: </p> 
@@ -188,30 +190,16 @@ const handleEditImage = async (imgID) => {
          className='btn btn-primary vstack mx-auto rounded-1 mt-3'>
         {editForm ? 'Close' : 'Edit'}
       </button>
-
-     {/* {
-      editForm && (
-         <form className='mt-5' onSubmit={handleSubmit}>
-              <h3 className='text-center'>Edit Name</h3>
-              <input type="text"
-                    value={name}
-                    className='ps-2 py-1 w-100'
-                    onChange={e => setName(e.target.value)} />
-
-              <br />       
-
-              <button className='btn btn-primary rounded-1 w-100 mt-2'
-                      type='submit'>
-                Change  
-              </button>       
-            </form>
-      )
-     }  */}
+      </div>
 
 
       <style>{`
 
-
+     .profileBox {
+          position: relative;
+          width: 100%;
+          height: 72vh;
+     }
      
      
       .setPImg1  {

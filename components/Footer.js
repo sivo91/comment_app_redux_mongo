@@ -49,7 +49,7 @@ const shareUrl = 'https://wolrd-cup-2023.vercel.app/'
        <Link href={'https://github.com/sivo91/comment_app_redux_mongo'}
               style={{textDecoration: 'none'}}
              target='_blank'>
-            <button className='btn btn-dark vstack mx-auto rounded-1 mt-3'>
+            <button className='btn btn-outline-dark vstack mx-auto rounded-1 mt-3'>
               GitHub
             </button>         
        </Link>
@@ -72,7 +72,7 @@ const shareUrl = 'https://wolrd-cup-2023.vercel.app/'
 
       footer {
         position: relative;
-        margin-top: 100px;
+        padding: 10px 0 ;
       }
 
       .charisma {
