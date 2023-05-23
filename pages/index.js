@@ -186,6 +186,10 @@ return  resDate
 
        backgroundImg : {
         backgroundImage: url('/usa.png')
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        opacity: .01;
        }
 
         .likeIcon {
