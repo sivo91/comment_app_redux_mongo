@@ -111,7 +111,7 @@ return  resDate
         Who wins the World Championship?
       </h3>
 
-      <h5 className='text-center'>
+      <h5 className='text-center ha5'>
         Please
         <Link href={'/register'} style={{textDecoration: 'none'}}>
           <span className='mx-2'>Sign Up</span>
@@ -184,6 +184,11 @@ return  resDate
 
 
        <style>{`
+
+       .ha5 {
+        position: relative;
+        z-index: 55555;
+       }
 
         .voteApp {
           position: relative;
