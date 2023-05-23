@@ -47,13 +47,24 @@ const shareUrl = 'https://comment-app-amber.vercel.app/'
         </div>
       </div>
 
-       <Link href={'https://github.com/sivo91/comment_app_redux_mongo'}
+       
+       <div className="github mt-4 text-center ">
+        <Link href={'https://github.com/sivo91/comment_app_redux_mongo'}
               style={{textDecoration: 'none'}}
              target='_blank'>
-            <button className='btn btn-outline-dark vstack mx-auto rounded-1 mt-3'>
+            <button className='btn btn-outline-dark me-2 rounded-1'>
               GitHub
             </button>         
        </Link>
+
+       <Link href={'https://full-world-cup-23.vercel.app/'} 
+            style={{textDecoration: 'none'}}
+            target='_blank'>
+        <button className='btn btn-outline-dark ms-2 rounded-1'>
+          Voting App
+        </button>
+      </Link>
+       </div>
 
         <div className='text-center mb-5 mt-2'>
           <Link href={'https://www.charismawebdevelopment.com/'}

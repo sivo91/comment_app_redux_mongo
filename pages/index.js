@@ -119,16 +119,7 @@ return  resDate
         to add comment.
       </h5>
 
-      <Link href={'https://full-world-cup-23.vercel.app/'} 
-            style={{textDecoration: 'none'}}
-            target='_blank'>
-        <button className='btn btn-outline-dark rounded-1 vstack mx-auto mt-4'>
-          Voting App
-        </button>
-      </Link>
-
-
-
+      
        {
         load ? (
            <p className='text-center mt-5'> <Loading type="gradient" /></p>
@@ -187,6 +178,11 @@ return  resDate
 
 
        <style>{`
+
+        .voteApp {
+          position: relative;
+          z-index: 888888;
+        }
  
         .backgroundImg {
           position: absolute;
