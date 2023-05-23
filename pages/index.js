@@ -7,6 +7,7 @@ import { TfiCommentAlt } from "react-icons/tfi";
 import { BsCalendar2Date } from "react-icons/bs";
 import { TfiCup } from "react-icons/tfi";
 import Link from 'next/link';
+import { Loading } from '@nextui-org/react';
 
 
 const Comment = () => {
@@ -28,11 +29,13 @@ const Comment = () => {
 
   // CALL MONGO
   const getComments = async () => {
+    setLoad(true)
     const res = await fetch('/api/comment/getComments', {cache: 'no-cache'})
     const data = await res.json()
     
     setAllComments(data.comments)
     setTotalCom(data.comments.length)
+    setLoad(false)
   } 
 
 
@@ -40,29 +43,6 @@ const Comment = () => {
     getComments() 
   }, [])
 
-  // ADD NEW COMM + CALL MONGO
-  const handleSubmit = async (e) => {
-     e.preventDefault()
-
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-        }
-      }
-
-     try {
-       setLoad(true)
-       const res = await axios.post('/api/comment/addComment', data, config)
-       toast.success(res.data.message)
-       setComment('')
-       setLoad(false)
-       getComments()
-       
-     } catch (error) {
-       console.log(error)
-       setLoad(false)
-     }
-  }
 
   // DATE FUNC
   const dateFuncion = (date) => {
@@ -140,57 +120,63 @@ return  resDate
 
 
 
-      
+       {
+        load ? (
+           <p className='text-center mt-5'> <Loading type="gradient" /></p>
+        ) : (
+             <div className="commentsBox">
+                <p className='text-center'>Total Comments: {totalCom}</p>
+                  {
+                    allComments.slice(0,visible).map( item => (
+                      <div className="card m-3 px-2" key={item._id}>
+                        
+                        <div className='d-flex mt-1'>
+                          <FaUserAlt className='userIcon'/>
+                          <p className='ms-2'>{item.userName}</p>
+                        </div>
 
-       <div className="commentsBox">
-        <p className='text-center'>Total Comments: {totalCom}</p>
-           {
-            allComments.slice(0,visible).map( item => (
-              <div className="card m-3 px-2" key={item._id}>
-                 
-                 <div className='d-flex mt-1'>
-                  <FaUserAlt className='userIcon'/>
-                  <p className='ms-2'>{item.userName}</p>
-                 </div>
-
-                 <div className='d-flex'>
-                  <TfiCup className='commentIcon'/>
-                  <p className='ms-2'>{item.comment}</p>
-                 </div>
+                        <div className='d-flex'>
+                          <TfiCup className='commentIcon'/>
+                          <p className='ms-2'>{item.comment}</p>
+                        </div>
 
 
 
-                 <div className='d-flex justify-content-between'>
-                    
-                    <div className='d-flex' // date + time   
-                          >
-                      <BsCalendar2Date className='dateIcon'/>
-                      <p className='ms-2'>
-                        {dateFuncion(item.createdAt)} {''}
-                        {timeFunction(item.time)}
-                      </p>
-                    </div>
+                        <div className='d-flex justify-content-between'>
+                            
+                            <div className='d-flex' // date + time   
+                                  >
+                              <BsCalendar2Date className='dateIcon'/>
+                              <p className='ms-2'>
+                                {dateFuncion(item.createdAt)} {''}
+                                {timeFunction(item.time)}
+                              </p>
+                            </div>
 
-                      <div className='d-flex'>
-                        <FaThumbsUp className='likeIcon'
-                         onClick={() => handleLike(item._id)}/>
-                        <p className='ms-2'>{item.like}</p>
+                              <div className='d-flex'>
+                                <FaThumbsUp className='likeIcon'
+                                onClick={() => handleLike(item._id)}/>
+                                <p className='ms-2'>{item.like}</p>
+                              </div>
+
+                        </div>
+                        
+                        
                       </div>
-
-                 </div>
-                 
-                 
-              </div>
-            ) )
-          }  
+                    ) )
+                  }  
 
           <button className='btn btn-dark rounded-1 vstack mx-auto '
-                  onClick={showMore}>
-           { maxCom === totalCom ||
-             maxCom - 1 === totalCom ? 
-             'No More Comments' : 'Load More'}
+                  onClick={showMore}
+                  disabled={maxCom === totalCom ||
+             maxCom - 1 === totalCom}>
+              Load More
           </button>
        </div>
+        )
+       }
+
+       
 
 
 

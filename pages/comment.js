@@ -7,7 +7,7 @@ import { FaUserAlt, FaThumbsUp } from "react-icons/fa";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { BsCalendar2Date } from "react-icons/bs";
 import { TfiCup } from "react-icons/tfi";
-import Link from 'next/link';
+import { Loading } from '@nextui-org/react';
 
 
 const Comment = () => {
@@ -30,10 +30,12 @@ const Comment = () => {
 
   // CALL MONGO
   const getComments = async () => {
+    setLoad(true)
     const res = await fetch('/api/comment/getComments', {cache: 'no-cache'})
     const data = await res.json()
     setAllComments(data.comments)
     setTotalCom(data.comments.length)
+    setLoad(false)
   } 
 
 
@@ -142,9 +144,12 @@ return  resDate
        </form>
 
        
-
-
-       <div className="commentsBox">
+       
+        {
+          load ? (
+             <p className='text-center mt-5'> <Loading type="gradient" /></p>
+          ) : (
+            <div className="commentsBox">
         <p className='text-center mt-3'>Total Comments: {totalCom}</p>
            {
             allComments.slice(0,visible).map( item => (
@@ -188,12 +193,17 @@ return  resDate
           }  
 
           <button className='btn btn-dark rounded-1 vstack mx-auto '
-                  onClick={showMore}>
-           { maxCom === totalCom ||
-             maxCom - 1 === totalCom ? 
-             'No More Comments' : 'Load More'}
+                  onClick={showMore}
+                  disabled={maxCom === totalCom ||
+             maxCom - 1 === totalCom}>
+           Load More
           </button>
        </div>
+          )
+        }
+
+
+       
 
 
 

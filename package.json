@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/react": "^1.0.0-beta.12",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
