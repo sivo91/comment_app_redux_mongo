@@ -101,9 +101,7 @@ return  resDate
 
   return (
     <>
-        
-      <div className="backgroundImg"></div>  
-     
+ 
       <h3 className='text-center mt-5 pt-5'>
         Who wins the World Championship?
       </h3>
@@ -184,18 +182,11 @@ return  resDate
 
        <style>{`
 
-       backgroundImg : {
-        backgroundImage: url('/usa.png')
-        position: absolute;
-        width: 100%;
-        height: 10px;
-        opacity: .01;
-       }
+       
 
         .likeIcon {
           cursor: pointer;
         }
-
 
         .userIcon, .commentIcon, .dateIcon, .likeIcon {
           position: relative;
