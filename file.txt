@@ -1,0 +1,4 @@
+MONGO_URL= mongo here
+
+JWT_SECRET= solid generate code here
+
