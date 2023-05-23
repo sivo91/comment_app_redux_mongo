@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { FaUserAlt, FaThumbsUp } from "react-icons/fa";
-import { TfiCommentAlt } from "react-icons/tfi";
+import { TfiEmail } from "react-icons/tfi";
 import { BsCalendar2Date } from "react-icons/bs";
 import { TfiCup } from "react-icons/tfi";
 import Link from 'next/link';
@@ -22,6 +22,7 @@ const Comment = () => {
   const [maxCom, setMaxCom] = useState(2)
   
   /* console.log(user?.user?.email)
+  
   console.log(user?.user?._id) */
 
   //const userEmail = user?.user?.email
@@ -33,7 +34,6 @@ const Comment = () => {
     setLoad(true)
     const res = await fetch('/api/comment/getComments', {cache: 'no-cache'})
     const data = await res.json()
-    
     setAllComments(data.comments)
     setTotalCom(data.comments.length)
     setLoad(false)
@@ -130,10 +130,16 @@ return  resDate
                     allComments.slice(0,visible).map( item => (
                       <div className="card m-3 px-2" key={item._id}>
                         
-                        <div className='d-flex mt-1'>
-                          <FaUserAlt className='userIcon'/>
-                          <p className='ms-2'>{item.userName}</p>
-                        </div>
+                         <div className='d-flex mt-1 justify-content-between'>
+                            <div className='d-flex'>
+                              <FaUserAlt className='userIcon'/>
+                              <p className='ms-2'>{item.userName}</p>
+                            </div>
+                            <div className='d-flex'>
+                              <TfiEmail className='emailIcon'/>
+                              <p className='ms-2'>{item.userEmail}</p>
+                            </div>
+                      </div>
 
                         <div className='d-flex'>
                           <TfiCup className='commentIcon'/>
@@ -203,7 +209,7 @@ return  resDate
           cursor: pointer;
         }
 
-        .userIcon, .commentIcon, .dateIcon, .likeIcon {
+        .userIcon, .commentIcon, .dateIcon, .likeIcon, .emailIcon {
           position: relative;
           top: 4px;
         }

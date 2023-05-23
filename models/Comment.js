@@ -18,6 +18,9 @@ const orderSchema = new mongoose.Schema(
     },
     time: {
       type: String
+    },
+    userEmail : {
+      type: String
     }     
   },
   {

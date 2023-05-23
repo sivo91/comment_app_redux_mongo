@@ -17,6 +17,7 @@ const handler = async (req, res) => {
   
    const userId = req.body.userId
    const comment = req.body.comment
+   const userEmail = req.body.userEmail
  
    //console.log(userId, comment)
 
@@ -26,6 +27,7 @@ const handler = async (req, res) => {
       comment,
       user,
       userName: user.name,
+      userEmail: userEmail,
       like: 0,
       time: new Date().getHours() + ':' + new Date().getMinutes()
    })
