@@ -16,7 +16,7 @@ const shareUrl = 'https://comment-app-amber.vercel.app/'
       <>    
        
        <footer >
-        <div className="backgroundImage"></div>
+
         <div className="share-us">
          <div className="iconsPanel">
             <FacebookShareButton 
@@ -70,14 +70,7 @@ const shareUrl = 'https://comment-app-amber.vercel.app/'
 
     <style>{`
 
-     .backgroundImage {
-      position: absolute;
-      width: 100%;
-      top: 0;
-      height: 100%;
-      opacity: 0.03;
-      background-image: url('/usa.png');
-     }
+    
  
 
       footer {

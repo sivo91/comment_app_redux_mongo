@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
@@ -101,16 +102,21 @@ return  resDate
 
   return (
     <>
+
+     <div className="backgroundImg">
+      <img src="svk.png" className='bgImg' alt="img" />
+     </div>
  
       <h3 className='text-center mt-5 pt-5'>
         Who wins the World Championship?
       </h3>
 
       <h5 className='text-center'>
-        To Add Comment please 
+        Please
         <Link href={'/register'} style={{textDecoration: 'none'}}>
-          <span className='ms-2'>Sign Up</span>
+          <span className='mx-2'>Sign Up</span>
         </Link>
+        to add comment.
       </h5>
 
       <Link href={'https://full-world-cup-23.vercel.app/'} 
@@ -181,7 +187,20 @@ return  resDate
 
 
        <style>{`
+ 
+        .backgroundImg {
+          position: absolute;
+          width: 100%;
+          height: 100vh;
+          opacity: 0.04;
+        }
 
+        .bgImg {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
        
 
         .likeIcon {
