@@ -49,9 +49,9 @@ const shareUrl = 'https://comment-app-amber.vercel.app/'
 
        
        <div className="github mt-4 text-center ">
-        <Link href={'https://github.com/sivo91/comment_app_redux_mongo'}
+        <Link href={'/'}
               style={{textDecoration: 'none'}}
-             target='_blank'>
+             >
             <button className='btn btn-outline-dark me-2 rounded-1'>
               GitHub
             </button>         
