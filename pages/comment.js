@@ -20,7 +20,7 @@ const Comment = () => {
   const [visible, setVisible] = useState(2)
   const [maxCom, setMaxCom] = useState(2)
 
-  
+  // userID and userEmail from redux user line 15
   const userId = user?.user?._id
   const userEmail = user?.user?.email
   const data = {userId, comment, userEmail}
