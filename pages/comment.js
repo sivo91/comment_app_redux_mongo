@@ -25,7 +25,7 @@ const Comment = () => {
   const userEmail = user?.user?.email
   const data = {userId, comment, userEmail}
 
-  // CALL MONGO
+  // CALL MONGO TO SHOW ALL COMMENTS
   const getComments = async () => {
     setLoad(true)
     const res = await fetch('/api/comment/getComments', {cache: 'no-cache'})
